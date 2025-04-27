@@ -39,7 +39,7 @@
                             <td><?=$row['description'];?></td>
                             <td>
                                 <a href="#" class="btn btn-success btn-sm">Edit</a>
-                                <a href="#" class="btn btn-danger btn-sm">Delete</a>
+                                <a href="delete.php?id=<?=$row['id'];?>" class="btn btn-danger btn-sm">Delete</a>
                             </td>
                         </tr>
                     <?php endwhile; ?>
