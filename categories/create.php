@@ -18,15 +18,8 @@
         }
     }
 ?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
-</head>
-<body>
+<?php $title = "Create"; ?>
+<?php include('../includes/header.php'); ?>
     <div class="container">
         <h3>Create Categories</h3>
         <p>
@@ -68,7 +61,5 @@
                 </div>
             </div>
         </form>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
     </div>
-</body>
-</html>
+<?php include('../includes/footer.php'); ?>

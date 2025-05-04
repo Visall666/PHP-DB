@@ -38,4 +38,37 @@
         mysqli_close($conn);
         return $result;
     }
+
+    // function to alert success
+    function delete_success()
+    {
+        $sms = "";
+        if(isset($_SESSION['success']))
+        {
+            $sms = " 
+                <div class=\"alert alert-success alert-dismissible fade show\" >
+                    <strong>Information!</strong> Data has been removed successfully!
+                    <button type=\"button\" class=\"btn-close\" data-bs-dismiss=\"alert\" aria-label=\"Close\"></button>
+                </div>
+            ";
+            unset($_SESSION['success']);
+        }
+        echo $sms;
+    }
+
+    function alert_success()
+    {
+        $sms = "";
+        if(isset($_SESSION['save_success']))
+        {
+            $sms = "
+                <div class=\"alert alert-success alert-dismissible fade show\" >
+                    <strong>Information!</strong> Data has been saved successfully.
+                    <button type=\"button\" class=\"btn-close\" data-bs-dismiss=\"alert\" aria-label=\"Close\"></button>
+                </div>
+            ";
+            unset($_SESSION['save_success']);
+        }
+        echo $sms;
+    }
 ?>
