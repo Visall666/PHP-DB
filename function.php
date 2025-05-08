@@ -59,16 +59,49 @@
     function alert_success()
     {
         $sms = "";
-        if(isset($_SESSION['save_success']))
+        if(isset($_SESSION['success']))
         {
+            $txt = $_SESSION['success'];
             $sms = "
                 <div class=\"alert alert-success alert-dismissible fade show\" >
-                    <strong>Information!</strong> Data has been saved successfully.
+                    <strong>Information!</strong> $txt
                     <button type=\"button\" class=\"btn-close\" data-bs-dismiss=\"alert\" aria-label=\"Close\"></button>
                 </div>
             ";
-            unset($_SESSION['save_success']);
+            unset($_SESSION['success']);
         }
         echo $sms;
+    }
+
+    function alert_error()
+    {
+        $sms = "";
+        if(isset($_SESSION['error']))
+        {
+            $txt = $_SESSION['error'];
+            $sms = "
+                <div class=\"alert alert-danger alert-dismissible fade show\" >
+                    <strong>Information!</strong> $txt
+                    <button type=\"button\" class=\"btn-close\" data-bs-dismiss=\"alert\" aria-label=\"Close\"></button>
+                </div>
+            ";
+            unset($_SESSION['error']);
+        }
+        echo $sms;
+    }
+
+    function upload($name, $dir)
+    {
+        $path = "";
+        if($_FILES[$name]['name'] !='')
+        {
+            $ext = pathinfo($_FILES[$name]['name'], PATHINFO_EXTENSION);  // jpg, png ...
+            $path = $dir . md5(date('Y-m-d-h:i:s')) . "." . $ext;
+            if(move_uploaded_file($_FILES[$name]['tmp_name'], '../' . $path))
+            {
+                return $path;
+            }
+        }
+        return $path;
     }
 ?>

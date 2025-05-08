@@ -60,7 +60,7 @@
 
                     <div class="form-group mt-2">
                         <label for="description">Description</label>
-                        <textarea name="description" id="description" class="form-control" rows="5" > <?=$description;?></textarea>
+                        <textarea name="description" id="description" class="form-control" rows="5" > <?=$description;?> </textarea>
                     </div>
                     
                     <div class="form-group mt-3">
