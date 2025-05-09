@@ -35,6 +35,7 @@
             <li><a class="dropdown-item" href="<?=BURL;?>companies/index.php">Companies Info</a></li>
             <li><a class="dropdown-item" href="<?=BURL;?>products/index.php">Products</a></li>
             <li><a class="dropdown-item" href="<?=BURL;?>categories/index.php">Categories</a></li>
+            <li><a class="dropdown-item" href="<?=BURL;?>roles/index.php">Roles</a></li>
           </ul>
         </li>
       </ul>

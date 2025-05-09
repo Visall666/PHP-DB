@@ -81,7 +81,7 @@
             $txt = $_SESSION['error'];
             $sms = "
                 <div class=\"alert alert-danger alert-dismissible fade show\" >
-                    <strong>Information!</strong> $txt
+                    <strong>Warning!</strong> $txt
                     <button type=\"button\" class=\"btn-close\" data-bs-dismiss=\"alert\" aria-label=\"Close\"></button>
                 </div>
             ";
