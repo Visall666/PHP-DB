@@ -42,6 +42,7 @@
         <form enctype="multipart/form-data" method="post"> <!-- enctype use when the form have image -->
             <?php alert_error() ?>
             <div class="row">
+                <!-- info first-side -->
                 <div class="col-sm-6">
                     <div class="row">
                         <label for="name" class="col-sm-3">Name <span class="text-danger">*</span></label>
@@ -74,13 +75,15 @@
                         </div>
                     </div>
                 </div>
+
+                <!-- info second-side-->
                 <div class="col-sm-6">
                     <div class="row mt-2">
                         <label for="logo" class="col-sm-3">Logo</label>
                         <div class="col-sm-9">
-                            <input type="file" class="form-control" name="logo" accept="image/*" id="logo">
+                            <input type="file" class="form-control" name="logo" accept="image/*" id="logo" onchange="preview(event)">
                             <div class="mt-2">
-                                <img src="<?=BURL.$com['logo'];?>" alt="" width="120">
+                                <img src="<?=BURL.$com['logo'];?>" alt="" width="120" id="img">
                             </div>
                             <a href="edit.php" class="btn btn-danger btn-sm">Cancel</a>
                             <button class="btn btn-primary btn-sm" name="btn">Save</button>
