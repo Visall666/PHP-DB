@@ -40,7 +40,17 @@
           </ul>
         </li>
       </ul>
-     
+      <ul class="d-flex navbar-nav">
+        <li class="nav-item dropdown">
+          <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
+            <?=$_SESSION['username'];?>
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Profile</a></li>
+            <li><a class="dropdown-item" href="<?=BURL;?>logout.php">Log out</a></li>
+          </ul>
+        </li>
+      </ul>
     </div>
   </div>
 </nav>

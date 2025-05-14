@@ -104,4 +104,16 @@
         }
         return $path;
     }
+
+    function bind($data, $name)
+    {
+        $select = "<select class='form-control' name='$name' id='$name'>";
+            while($row=mysqli_fetch_assoc($data))
+            {
+                $select .= "<option value='{$row['id']}'>{$row['name']}</option>";
+            }
+        $select .= "</select>";
+        return $select;
+    }
+        
 ?>
