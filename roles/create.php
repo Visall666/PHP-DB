@@ -1,33 +1,36 @@
 <?php
     include('../config.php');
     include('../function.php');
+    $title = "Create Role";
 
+ ?> 
+ <?php include('../includes/header.php'); ?>
+ 
+ <?php  
     if(isset($_POST['btn'])){
         $name = $_POST['name'];
         $sql = "insert into roles (name) value('$name')";
 
         $x = non_query($sql);
         if ($x) {
-            $_SESSION['success'] = DEL_SUCCESS_SMS;
-            header('location: index.php');
+            $_SESSION['success'] = SUCCESS_SMS;
+
         }
         else{
-            $_SESSION['error'] = DEL_ERROR_SMS;
-            header('location: index.php');
+            $_SESSION['error'] = ERROR_SMS;
         }
     }
 ?>
-<?php $title = "Create"; ?>
-<?php include('../includes/header.php'); ?>
+
     <div class="container">
         <h3>Create Roles</h3>
         <p>
             <a href="index.php" class="btn btn-success btn-sm">Back</a>
         </p>
-        <form method = "post">
+        <form method = "post"><?php alert_success(); alert_error(); ?>
             <div class="row">
                 <div class="col-sm-6">
-                    <?php alert_success(); alert_error(); ?>
+                    
 
                     <div class="form-group">
                         <label for="name">Name

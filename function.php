@@ -105,12 +105,16 @@
         return $path;
     }
 
-    function bind($data, $name)
+    function bind($data, $name, $id, $col_name='name')
     {
         $select = "<select class='form-control' name='$name' id='$name'>";
             while($row=mysqli_fetch_assoc($data))
             {
-                $select .= "<option value='{$row['id']}'>{$row['name']}</option>";
+                $class = "";
+                if($id == $row['id']){
+                    $class = "selected";
+                }
+                $select .= "<option value='{$row['id']}' $class>{$row[$col_name]}</option>";
             }
         $select .= "</select>";
         return $select;

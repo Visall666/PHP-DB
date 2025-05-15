@@ -14,7 +14,6 @@
 ?>
 
 <?php include('../includes/header.php');?>
-<body>
     <div class="container">
         <h2>Users</h2>
         <p>
